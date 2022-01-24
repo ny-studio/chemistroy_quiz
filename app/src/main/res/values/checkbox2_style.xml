@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="red_checkbox" parent="Theme.AppCompat.Light">
+        <!-- 枠線 -->
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <!-- チェック時の色 -->
+        <item name="colorControlActivated">@android:color/holo_red_light</item>
+    </style>
+</resources>

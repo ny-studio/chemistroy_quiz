@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.Chemistryquiz">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/ads_AppId" />
+
+        <activity android:name="com.example.Chemistryquiz.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name=".Quiz_Theme"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".Quiz_sub"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.example.Chemistryquiz.無機"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.example.Chemistryquiz.有機"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.金属"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.非金属"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.QuizApp"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.ResultActivity"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.有機問題"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.芳香"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.example.Chemistryquiz.高分子"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.天然高分子"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.合成高分子"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.設定"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.総合"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.reQuiz"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name=".復習"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name=".金属イオン"
+            android:label="高校化学"/>
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.example.Chemistryquiz.物質の状態平衡"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.固体"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.物質の構成"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.気体溶液"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.酸化還元"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.電気分解"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.熱化学"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTop"
+            android:name="com.example.Chemistryquiz.化学平衡"
+            android:label="@string/app_name"/>
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.example.Chemistryquiz.物質の反応"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".問題一覧"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".Glaph"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".工業的製法"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".法則"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".法則反応など"
+            android:label="@string/app_name"/>
+        <receiver android:name=".AlarmReceiver" android:process=":remote" />
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!--android:name="com.google.android.gms.ads.APPLICATION_ID" -->
+
+    </application>
+
+</manifest>

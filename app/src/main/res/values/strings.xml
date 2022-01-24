@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">高校化学クイズ </string>
+    <string name="button">Button</string>
+    <string name="home">Home</string>
+    <string name="muki">無機</string>
+    <string name="hikin">非金属元素</string>
+    <string name="kaisi">開始</string>
+    <string name="q1">Q1</string>
+    <string name="question">Question</string>
+    <string name="answer1">answer1</string>
+    <string name="answer2">answer2</string>
+    <string name="answer3">answer3</string>
+    <string name="answer4">answer4</string>
+    <string name="menu_item1">学習履歴</string>
+    <string name="menu_item2">スコア</string>
+    <string name="menu_item3">設定</string>
+    <string name="menu_item4">1</string>
+    <string name="mkisiren">mkisiren</string>
+    //interstitial
+    <string name="ads_AppId">ca-app-pub-3958141489226219~2718899627</string>
+    //sample app id ca-app-pub-3940256099942544~3347511713
+    //app id ca-app-pub-3958141489226219~2718899627
+    //"ads_UnitId_Interstitial"ca-app-pub-3940256099942544/1033173712
+    //banner
+    //ca-app-pub-3958141489226219/7574628723
+    //test ca-app-pub-3940256099942544/6300978111
+    <string name="ads_banner">ca-app-pub-3958141489226219/7574628723</string>
+</resources>
