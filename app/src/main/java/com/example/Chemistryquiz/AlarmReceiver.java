@@ -1,15 +1,10 @@
 package com.example.Chemistryquiz;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import java.util.Calendar;
 
@@ -58,7 +53,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         int t = preferenceClass.getTotalScore();
         int c = preferenceClass.getCorrectScore();
         int i = preferenceClass.getIncorrectScore();
- }
+    }
 
     private void insertData(SQLiteDatabase db, int month, int date, int ts, int cs, int is) {
         ContentValues values = new ContentValues();

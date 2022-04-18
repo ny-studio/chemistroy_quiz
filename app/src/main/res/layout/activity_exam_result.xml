@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ExamResult">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resultLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="結果 \n/"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <ListView
+            android:id="@+id/solvedList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15">
+        </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="#DAE0FF"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/adb"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/flame"
+                android:onClick="returnTop"
+                android:text="もどる"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/nextbutton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/flame_white"
+                android:onClick="next"
+                android:text="もう一回"
+                android:textColor="#0000dd"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

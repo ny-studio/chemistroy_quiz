@@ -9,7 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:minHeight="?attr/actionBarSize"
         android:background="#dbe2ef"
         >
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
     <Button
         android:id="@+id/send_button10"
         android:text="天然高分子化合物"

@@ -1,0 +1,34 @@
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- ボタンが押されていない状態 -->
+<item android:state_pressed="false">
+    <!-- shape:rectangle(=四角形) -->
+    <shape android:shape="rectangle">
+        <!-- 角の丸み -->
+        <corners android:radius="30dp" />
+        <!-- グラデーション -->
+        <!-- angle:角度、type:linear(=線形) -->
+        <stroke
+            android:width="1.0dp"
+            android:color="@android:color/black" />
+        <solid android:color="#ffffff"/>
+    </shape>
+</item>
+
+<!-- ボタンが押された状態 -->
+<item android:state_pressed="true">
+    <!-- shape:rectangle(=四角形) -->
+    <shape android:shape="rectangle">
+        <!-- 角の丸み -->
+        <corners android:radius="30dp" />
+        <!-- グラデーション -->
+        <!-- angle:角度、type:linear(=線形) -->
+        <stroke
+            android:width="1.0dp"
+            android:color="@android:color/black" />
+        <solid android:color="#999999" />
+    </shape>
+</item>
+
+</selector>

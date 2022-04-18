@@ -2,20 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.Chemistryquiz">
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/ads_AppId" />
 
-        <activity android:name="com.example.Chemistryquiz.MainActivity">
-
+        <activity android:name="com.example.Chemistryquiz.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,10 +28,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity
-            android:name=".Quiz_Theme"
+            android:name=".QuizStatus"
             android:label="@string/app_name"/>
         <activity
-            android:name=".Quiz_sub"
+            android:name=".QuizHome"
             android:label="@string/app_name"/>
         <activity
             android:launchMode="singleTask"
@@ -50,7 +51,7 @@
             android:label="@string/app_name"/>
         <activity
             android:launchMode="singleTop"
-            android:name="com.example.Chemistryquiz.QuizApp"
+            android:name="com.example.Chemistryquiz.Quiz"
             android:label="@string/app_name"/>
         <activity
             android:launchMode="singleTop"
@@ -86,11 +87,7 @@
             android:label="@string/app_name"/>
         <activity
             android:launchMode="singleTop"
-            android:name="com.example.Chemistryquiz.reQuiz"
-            android:label="@string/app_name"/>
-        <activity
-            android:launchMode="singleTop"
-            android:name=".復習"
+            android:name="com.example.Chemistryquiz.ReQuiz"
             android:label="@string/app_name"/>
         <activity
             android:launchMode="singleTop"
@@ -147,6 +144,9 @@
         <activity
             android:name=".法則反応など"
             android:label="@string/app_name"/>
+        <activity android:name=".ExamResult"/>
+        <activity android:name=".ExamSetting"/>
+        <activity android:name=".Exam"/>
         <receiver android:name=".AlarmReceiver" android:process=":remote" />
         <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <!--android:name="com.google.android.gms.ads.APPLICATION_ID" -->

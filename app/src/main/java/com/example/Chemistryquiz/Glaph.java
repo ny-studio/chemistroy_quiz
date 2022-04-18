@@ -5,31 +5,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.CheckBox;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.utils.ViewPortHandler;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,6 +34,7 @@ public class Glaph extends AppCompatActivity {
     int color1;
     int color2;
     int color3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,29 +82,29 @@ public class Glaph extends AppCompatActivity {
         int rowcount = cursor.getCount();
         ArrayList<String> Value = new ArrayList<>();
 
-        entry1.add(new Entry(0,0));
-        entry2.add(new Entry(0,0));
-        entry3.add(new Entry(0,0));
+        entry1.add(new Entry(0, 0));
+        entry2.add(new Entry(0, 0));
+        entry3.add(new Entry(0, 0));
 
         cursor.moveToFirst();
         //グラフ用データ
         for (int i = 0; i < rowcount; i++) {
             Value.add(cursor.getString(0) + "/" + cursor.getInt(1));
-            entry1.add(new Entry(i,cursor.getInt(2)));
-            entry2.add(new Entry(i,cursor.getInt(3)));
-            entry3.add(new Entry(i,cursor.getInt(4)));
+            entry1.add(new Entry(i, cursor.getInt(2)));
+            entry2.add(new Entry(i, cursor.getInt(3)));
+            entry3.add(new Entry(i, cursor.getInt(4)));
             cursor.moveToNext();
         }
         cursor.close();
 
-        LineDataSet lDataSet1 = createSet("回答数",color1,entry1);
-        LineDataSet lDataSet2 = createSet("正解数",color2,entry2);
-        LineDataSet lDataSet3 = createSet("不正解数",color3,entry3);
+        LineDataSet lDataSet1 = createSet("回答数", color1, entry1);
+        LineDataSet lDataSet2 = createSet("正解数", color2, entry2);
+        LineDataSet lDataSet3 = createSet("不正解数", color3, entry3);
 
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(Value));
 
-        final LineData linedata = new LineData(lDataSet1,lDataSet2,lDataSet3);
+        final LineData linedata = new LineData(lDataSet1, lDataSet2, lDataSet3);
 
         Chart.setData(linedata);
         Chart.setVisibleXRangeMaximum(5);

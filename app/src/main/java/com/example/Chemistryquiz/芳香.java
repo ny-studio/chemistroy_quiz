@@ -1,13 +1,13 @@
 package com.example.Chemistryquiz;
 
-public class 芳香 extends Quiz_Theme {
+public class 芳香 extends QuizStatus {
 
     public 芳香(){
-        super.setquizdata(quizData.getQuizData_houkou());
-        super.settable_c1("quizdb3");
-        super.settable_c2("rightqs3");
-        super.setTitletext("芳香族化合物");
-        super.setbeforeClass(有機.class);
+        super(QuizData.getQuizData_houkou(),
+                "quizdb3",
+                "rightqs3",
+                "芳香族化合物",
+                有機.class);
     }
 }
 

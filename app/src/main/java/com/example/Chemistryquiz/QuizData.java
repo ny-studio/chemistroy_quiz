@@ -1448,63 +1448,63 @@ public class QuizData implements Serializable {
     };
 
     //問題をとりだすメソッド
-    protected String[][] getQuizData_kitai() {
+    static String[][] getQuizData_kitai() {
         return kitai_youeki;
     }
 
-    protected String[][] getQuizData_kotai() {
+    static String[][] getQuizData_kotai() {
         return kotai_kouzou;
     }
 
-    protected String[][] getQuizData_bussitu() {
+    static String[][] getQuizData_bussitu() {
         return bussitu;
     }
 
-    protected String[][] getQuizData_kinzoku() {
+    static String[][] getQuizData_kinzoku() {
         return kinzoku;
     }
 
-    protected String[][] getQuizData_kinzoku_ion() {
+    static String[][] getQuizData_kinzoku_ion() {
         return kinzoku_ion;
     }
 
-    protected String[][] getQuizData_hikinzoku() {
+    static String[][] getQuizData_hikinzoku() {
         return hikinzoku;
     }
 
-    protected String[][] getQuizData_yuuki() {
+    static String[][] getQuizData_yuuki() {
         return yuuki;
     }
 
-    protected String[][] getQuizData_houkou() {
+    static String[][] getQuizData_houkou() {
         return houkou;
     }
 
-    protected String[][] getQuizData_tennen() {
+    static String[][] getQuizData_tennen() {
         return tennen_kobunsi;
     }
 
-    protected String[][] getQuizData_gousei() {
+    static String[][] getQuizData_gousei() {
         return gousei_kobunsi;
     }
 
-    protected String[][] getQuizData_sankakangen() {
+    static String[][] getQuizData_sankakangen() {
         return sanka_kangen;
     }
 
-    protected String[][] getQuizData_denki() {
+    static String[][] getQuizData_denki() {
         return denki;
     }
 
-    protected String[][] getQuizData_netsukagaku() {
+    static String[][] getQuizData_netsukagaku() {
         return netsukagaku;
     }
 
-    protected String[][] getQuizData_seihou() {
+    static String[][] getQuizData_seihou() {
         return seihou;
     }
 
-    protected String[][] getQuizData_housoku() {
+    static String[][] getQuizData_housoku() {
         return housoku;
     }
 }

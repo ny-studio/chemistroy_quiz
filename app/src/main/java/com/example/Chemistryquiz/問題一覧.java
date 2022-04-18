@@ -3,12 +3,23 @@ package com.example.Chemistryquiz;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.ArrayList;
 
@@ -16,6 +27,7 @@ public class 問題一覧 extends AppCompatActivity {
 
     private QuizData quizData = new QuizData();
     private EditText editText;
+    InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +39,38 @@ public class 問題一覧 extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+
+        if (Math.random() < 0.4) {
+            //広告の用意
+            MobileAds.initialize(this, new OnInitializationCompleteListener() {
+                @Override
+                public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+                }
+            });
+
+            AdRequest adRequest = new AdRequest.Builder().build();
+            InterstitialAd.load(this, getResources().getString(R.string.ads_InterstitialId), adRequest,
+                    new InterstitialAdLoadCallback() {
+                        @Override
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                            super.onAdFailedToLoad(loadAdError);
+                            mInterstitialAd = null;
+                        }
+
+                        @Override
+                        public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                            Log.d("TAG", "Ad was loaded.");
+                            super.onAdLoaded(interstitialAd);
+                            mInterstitialAd = interstitialAd;
+                            if (mInterstitialAd != null) {
+                                mInterstitialAd.show(問題一覧.this);
+                            } else {
+                                Log.d("TAG", "The interstitial ad wasn't ready yet.");
+                            }
+                        }
+                    });
+        }
 
         //クリックされたときに行う
         editText = (EditText) findViewById(R.id.Search_Text);
@@ -42,9 +86,9 @@ public class 問題一覧 extends AppCompatActivity {
                 ArrayList<ListItem> listItems1 = new ArrayList<>();
                 ListView listView1 = (ListView) findViewById(R.id.mondai_list);
                 Search_addItems(listItems1, search_word);
+
                 ListAdapter adapter = new ListAdapter(問題一覧.this, R.layout.simple_list_item_1, listItems1);
                 listView1.setAdapter(adapter);
-
             }
         });
         //レイアウトからリストビューを取得
@@ -57,6 +101,7 @@ public class 問題一覧 extends AppCompatActivity {
 
         //表示
         ListAdapter adapter = new ListAdapter(this, R.layout.simple_list_item_1, listItems);
+
         listView.setAdapter(adapter);
     }
 

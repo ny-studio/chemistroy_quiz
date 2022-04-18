@@ -20,7 +20,9 @@
     <string name="ads_AppId">ca-app-pub-3958141489226219~2718899627</string>
     //sample app id ca-app-pub-3940256099942544~3347511713
     //app id ca-app-pub-3958141489226219~2718899627
-    //"ads_UnitId_Interstitial"ca-app-pub-3940256099942544/1033173712
+    <string name="ads_InterstitialId">ca-app-pub-3958141489226219/3826955404</string>
+    //real ca-app-pub-3958141489226219/3826955404
+    //test ca-app-pub-3940256099942544/1033173712
     //banner
     //ca-app-pub-3958141489226219/7574628723
     //test ca-app-pub-3940256099942544/6300978111

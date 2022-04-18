@@ -1,12 +1,12 @@
 package com.example.Chemistryquiz;
 
-public class 固体 extends Quiz_Theme {
+public class 固体 extends QuizStatus {
 
     public 固体(){
-        super.setquizdata(quizData.getQuizData_kotai());
-        super.settable_c1("quizdb8");
-        super.settable_c2("rightqs8");
-        super.setTitletext("固体の性質");
-        super.setbeforeClass(物質の状態平衡.class);
+        super(QuizData.getQuizData_kotai(),
+                "quizdb8",
+                "rightqs8",
+                "固体の性質",
+                物質の状態平衡.class);
     }
 }

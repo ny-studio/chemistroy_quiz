@@ -2,15 +2,15 @@ package com.example.Chemistryquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -22,7 +22,7 @@ public class 物質の状態平衡 extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jotaiheikou);
-        MobileAds.initialize(this, getString(R.string.ads_AppId));
+        MobileAds.initialize(this);
         AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -40,7 +40,7 @@ public class 物質の状態平衡 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CODE= "bussitu_kousei";
-                Intent intent = new Intent(getApplication(), Quiz_sub.class);
+                Intent intent = new Intent(getApplication(), QuizHome.class);
                 intent.putExtra("CODE",CODE);
                 startActivity(intent);
             }
@@ -49,7 +49,7 @@ public class 物質の状態平衡 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CODE= "kitai";
-                Intent intent = new Intent(getApplication(), Quiz_sub.class);
+                Intent intent = new Intent(getApplication(), QuizHome.class);
                 intent.putExtra("CODE",CODE);
                 startActivity(intent);
             }
@@ -58,7 +58,7 @@ public class 物質の状態平衡 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CODE= "kotai";
-                Intent intent = new Intent(getApplication(), Quiz_sub.class);
+                Intent intent = new Intent(getApplication(), QuizHome.class);
                 intent.putExtra("CODE",CODE);
                 startActivity(intent);
             }

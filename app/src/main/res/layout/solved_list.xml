@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="3dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/quiz_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_gravity="center"
+            android:textSize="27dp"
+            android:textColor="#ff0000"
+            android:text="〇" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/questionImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/question_answer"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:layout_height="wrap_content"
+                android:text="答えーーーーーーーーーーーーーーーーーーーーーーーーーーー"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/question_selected_answer"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="3dp"
+                android:layout_height="wrap_content"
+                android:text="あなたの答えーーーーーーーーーーーーーーーーーーーーーーーーーーー"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/question_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:textColor="#444444"
+            android:text="解説ーーーーーーーーーーーーーーーーーーーーーーーーーー"
+            android:textSize="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,13 +1,13 @@
 package com.example.Chemistryquiz;
 
-public class 天然高分子 extends Quiz_Theme {
+public class 天然高分子 extends QuizStatus {
 
     public 天然高分子(){
-        super.setquizdata(quizData.getQuizData_tennen());
-        super.settable_c1("quizdb4");
-        super.settable_c2("rightqs4");
-        super.setTitletext("天然高分子化合物");
-        super.setbeforeClass(高分子.class);
+        super(QuizData.getQuizData_tennen(),
+                "quizdb4",
+                "rightqs4",
+                "天然高分子化合物",
+                高分子.class);
     }
 
 }

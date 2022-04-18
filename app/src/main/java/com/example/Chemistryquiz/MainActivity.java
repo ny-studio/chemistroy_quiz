@@ -6,17 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.ads.AdListener;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -34,11 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         al();
 
+        MobileAds.initialize(this);
+        AdView adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         //月日を更新
         editor.putInt("Month", Today_Month());
         editor.putInt("Date", Today_Date());
         editor.apply();
-
 
         //ツールバーのセット
         Toolbar toolbar = findViewById(R.id.tool_bar);
@@ -46,88 +48,63 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //ボタンのセット
-        Button sendButton1 = findViewById(R.id.send_button);
-        Button sendButton2 = findViewById(R.id.send_button1);
-        Button sendButton3 = findViewById(R.id.send_button2);
-        Button sendButton4 = findViewById(R.id.send_button3);
-        Button sendButton5 = findViewById(R.id.send_button20);
-        Button sendbutton6 = findViewById(R.id.send_button27);
+        Button mukiButton = findViewById(R.id.muki);
+        Button yukiButton = findViewById(R.id.yuki);
+        Button koubunsiButton = findViewById(R.id.koubunsi);
+        Button housokuButton = findViewById(R.id.housoku);
+        Button joutaiButton = findViewById(R.id.joutaiheikou);
+        Button hannouButton = findViewById(R.id.hannou);
+        Button examButton = findViewById(R.id.exam);
 
-        sendButton1.setOnClickListener(new View.OnClickListener() {
+        mukiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 無機.class);
                 startActivity(intent);
             }
         });
-        sendButton2.setOnClickListener(new View.OnClickListener() {
+        yukiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 有機.class);
                 startActivity(intent);
             }
         });
-        sendButton3.setOnClickListener(new View.OnClickListener() {
+        koubunsiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 高分子.class);
                 startActivity(intent);
             }
         });
-        sendButton4.setOnClickListener(new View.OnClickListener() {
+        housokuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 法則反応など.class);
                 startActivity(intent);
             }
         });
-        sendButton5.setOnClickListener(new View.OnClickListener() {
+        joutaiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 物質の状態平衡.class);
                 startActivity(intent);
             }
         });
-        sendbutton6.setOnClickListener(new View.OnClickListener() {
+        hannouButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), 物質の反応.class);
                 startActivity(intent);
             }
         });
-
-        MobileAds.initialize(this, getString(R.string.ads_AppId));
-        AdView adView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-        // ad's lifecycle: loading, opening, closing, and so on
-        adView.setAdListener(new AdListener() {
+        examButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAdLoaded() {
-                Log.d("debug","Code to be executed when an ad finishes loading.");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Log.d("debug","Code to be executed when an ad request fails.");
-            }
-
-            @Override
-            public void onAdOpened() {
-                Log.d("debug","Code to be executed when an ad opens an overlay that covers the screen.");
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                Log.d("debug","Code to be executed when the user has left the app.");
-            }
-
-            @Override
-            public void onAdClosed() {
-                Log.d("debug","Code to be executed when when the user is about to return to the app after tapping on an ad.");
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(),ExamSetting.class);
+                startActivity(intent);
             }
         });
-
     }
 
     // アクションバーを表示するメソッド

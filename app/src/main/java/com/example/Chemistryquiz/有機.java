@@ -2,28 +2,28 @@ package com.example.Chemistryquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-public class 有機 extends  AppCompatActivity {
+public class 有機 extends AppCompatActivity {
     private String CODE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yuki);
         //ボタンのｾｯﾄ
-        MobileAds.initialize(this, getString(R.string.ads_AppId));
+        MobileAds.initialize(this);
         AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -41,7 +41,7 @@ public class 有機 extends  AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CODE= "yuuki";
-                Intent intent = new Intent(getApplication(), Quiz_sub.class);
+                Intent intent = new Intent(getApplication(), QuizHome.class);
                 intent.putExtra("CODE",CODE);
                 startActivity(intent);
             }
@@ -50,7 +50,7 @@ public class 有機 extends  AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CODE= "houkou";
-                Intent intent = new Intent(getApplication(), Quiz_sub.class);
+                Intent intent = new Intent(getApplication(), QuizHome.class);
                 intent.putExtra("CODE",CODE);
                 startActivity(intent);
             }
