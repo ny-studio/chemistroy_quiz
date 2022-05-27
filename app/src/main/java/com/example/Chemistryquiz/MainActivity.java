@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AlarmReceiver.class);
 
         //①Notificationを起動させる為。
-        PendingIntent _sender = PendingIntent.getBroadcast(this, 0, intent, 0);
+        PendingIntent _sender = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
